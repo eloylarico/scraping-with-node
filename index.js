@@ -1,12 +1,12 @@
 const express = require('express');
 const cors = require('cors');
-const puppeteer = require('puppeteer');
+//const puppeteer = require('puppeteer');
 const app = express();
 
 app.use(cors());
 app.get('/', (req, res) => {
-  res.send('Hello World!')
-})
+  res.send('Hello World!');
+});
 /* app.get('/linio/:textSearch', cors(),function (req, res) {
   let textSearch = req.params.textSearch;
     (async () => {
