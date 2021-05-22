@@ -2,12 +2,10 @@ const express = require('express');
 const cors = require('cors');
 const puppeteer = require('puppeteer');
 const app = express();
-const PORT = 8000;
+
+app.use(cors());
 app.get('/linio/:textSearch', cors(),function (req, res) {
-  var textSearch = req.params.textSearch;
-  textSearch.replace(/%20/g, " ");
-/* res.send('Hello World ' + textSearch)
-  return false */
+  let textSearch = req.params.textSearch;
     (async () => {
         const browser = await puppeteer.launch()
         const page = await browser.newPage()
@@ -206,4 +204,5 @@ app.get('/live/:textSearch', cors(),function (req, res) {
         browser.close()
       })()
 })
+  const PORT = 8000;
   app.listen(PORT, () => console.log(`Server listening on port: ${PORT}`));
