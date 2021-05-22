@@ -4,7 +4,10 @@ const puppeteer = require('puppeteer');
 const app = express();
 
 app.use(cors());
-app.get('/linio/:textSearch', cors(),function (req, res) {
+app.get('/', (req, res) => {
+  res.send('Hello World!')
+})
+/* app.get('/linio/:textSearch', cors(),function (req, res) {
   let textSearch = req.params.textSearch;
     (async () => {
         const browser = await puppeteer.launch()
@@ -33,8 +36,7 @@ app.get('/linio/:textSearch', cors(),function (req, res) {
       
         browser.close()
       })()
-    //res.send('Hello World')
-    //res.json(result)
+   
 })
 app.get('/ml/:textSearch', cors(),function (req, res) {
   var textSearch = req.params.textSearch;
@@ -157,8 +159,8 @@ app.get('/ele/:textSearch', cors(),function (req, res) {
              for (let i = 0; i < dat; i++) {
                 info.push({
                   //'title': data[i].querySelector('h3').innerText.trim().replace(/(\r\n|\n|\r)/gm, " "),
-                    /*  'price': data[i].querySelector('.Grid_finalPrice__uGu4s').innerText.replace('$',''),
-                    'image': data[i].querySelector('.Grid_image__3jG_j').src,*/
+                     // 'price': data[i].querySelector('.Grid_finalPrice__uGu4s').innerText.replace('$',''),
+                   // 'image': data[i].querySelector('.Grid_image__3jG_j').src,
                     //'link': data[i].querySelector('a').href, 
                     'provider' : 'Electra'
                 })
@@ -204,5 +206,6 @@ app.get('/live/:textSearch', cors(),function (req, res) {
         browser.close()
       })()
 })
+ */
   const PORT = 8000;
   app.listen(PORT, () => console.log(`Server listening on port: ${PORT}`));
