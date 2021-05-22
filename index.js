@@ -207,5 +207,5 @@ app.get('/live/:textSearch', cors(),function (req, res) {
       })()
 })
  */
-  const PORT = 8000;
+  const PORT = 3000;
   app.listen(PORT, () => console.log(`Server listening on port: ${PORT}`));
